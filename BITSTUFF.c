@@ -21,7 +21,7 @@ array[i++]='0';
 count=0;
 }
 } while(ch!='\n');
-strcat(array,"01111110"); /* FLAG pattern for START and END of HDLC
+strcat(array,"01111110");
 frame format*/
 printf("\n Transmitted bit stream(After stuffing) at the transmitter side is %s",array);
 /*DESTUFFING*/
