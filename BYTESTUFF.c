@@ -27,7 +27,7 @@ int main(){
 	}while(ch!='\n');
 	
 	array[i++]=DLE;
-	array[i++]=STX;
+	array[i++]=ETX;
 	printf("\nThe transmitted bit stream is:");
 	
 	for(j=0;j<i;j++){
