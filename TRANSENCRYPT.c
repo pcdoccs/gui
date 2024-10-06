@@ -6,14 +6,14 @@ int main() {
     char ch, data[30][30], output[100], seq[] = "MEGABUCK";
     int i, j, k, Columns = 0, Rows = 0, seq_No = 0, len = strlen(seq);
     
-    while ((ch = getchar()) != '\n') { // Read input data into the matrix
+    while ((ch = getchar()) != '\n') {
         data[Rows][Columns++] = ch;
         if(Columns == len){
             Rows++;
             Columns=0;
         }
     }
-    if (Columns != 0) { // Pad the remaining cells with dots
+    if (Columns != 0) {
         for (i = Columns; i < len; i++) {
             data[Rows][i] = '.';
         }
@@ -23,9 +23,9 @@ int main() {
         seq_No = 0;
         for (j = 0; j < len; j++) { 
             if (seq[i] > seq[j])
-                seq_No++; // Count gives the sequence order based on the keyword
+                seq_No++; 
         }
-        for (j = 0; j < Rows; j++) { // Create the output based on the sequence order
+        for (j = 0; j < Rows; j++) { y
             if ((seq_No * Rows) + j >= Rows * len)
                 break;
             output[(seq_No * Rows) + j] = data[j][i];
