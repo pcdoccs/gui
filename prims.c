@@ -6,7 +6,6 @@ int prime(int cost[10][10], int source, int n) {
     int i, j, sum = 0, visited[10], cmp[10], vertex[10];
     int min, u, v;
 
-    // Initialize arrays
     for (i = 1; i <= n; i++) {
         vertex[i] = source;
         visited[i] = 0;
@@ -14,7 +13,6 @@ int prime(int cost[10][10], int source, int n) {
     }
     visited[source] = 1;
 
-    // Main loop for Prim's algorithm
     for (i = 1; i <= n - 1; i++) {
         min = infinity;
         for (j = 1; j <= n; j++) {
@@ -50,7 +48,6 @@ void main() {
         }
     }
 
-    // Check for symmetry and zero diagonal elements
     for (i = 1; i <= n; i++) {
         for (j = 1; j <= n; j++) {
             if (a[i][j] != a[j][i] || (a[i][i] != 0)) {
