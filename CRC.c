@@ -5,14 +5,14 @@ void xor_division(int data[], int length, int Remainder[]) {
     int ccit[] = {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1};
     int ccit_size = degree + 1, i, j; 
     for (i = 0; i < length; i++)
-        Remainder[i] = data[i]; // Copy into result Array
+        Remainder[i] = data[i]; 
     for (i = 0; i <= length - ccit_size; i++)
-        if (Remainder[i] == 1 ) // checking if the current bit is 1 
+        if (Remainder[i] == 1 )  
             for (j = 0; j < ccit_size; j++) 
-                Remainder[i + j] = Remainder[i + j] ^ ccit[j]; // bit wise XOR operation
+                Remainder[i + j] = Remainder[i + j] ^ ccit[j]; 
     printf("\nRemainder: ");
     for (i = 0; i < length; i++)
-        printf("%d", Remainder[i]); //prints the remainder
+        printf("%d", Remainder[i]); 
     
 }
 
@@ -30,11 +30,11 @@ int main() {
     }
     length+=degree;
     int Remainder[length];
-    xor_division(data, length, Remainder); // CRC calculation
+    xor_division(data, length, Remainder);
     printf("\nTransmitting Data is : ");
     for (i = 0; i < length; i++) {
         if(i >= length - degree)
-            data[i] = Remainder[i]; //append CRC to the transmitting data
+            data[i] = Remainder[i]; 
         printf("%d", data[i]);
     }
     printf("\nEnter the recived data : ");
@@ -43,7 +43,7 @@ int main() {
         received_data[length++] = ch - '0';
     int Remainder_of_received[length];
     xor_division(received_data, length, Remainder_of_received);
-    // Check if the remainder is zero (i.e., no error)
+
     int error = 0;
     for (i = 0; i < length; i++) {
         if (Remainder_of_received[i] != 0) {
