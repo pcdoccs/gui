@@ -24,7 +24,6 @@ count=0;
 strcat(array,"01111110");
 frame format*/
 printf("\n Transmitted bit stream(After stuffing) at the transmitter side is %s",array);
-/*DESTUFFING*/
 j=strlen(array);
 count=0;
 k=0;
