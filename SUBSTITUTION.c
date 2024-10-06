@@ -16,37 +16,37 @@ void getdata() {
 void encryption() {
     for (i = 0; i < len; i++) {
         if (isupper(data[i])) {
-            output[i] = toupper(seq[data[i] - 'A']);  // Convert encoded character to uppercase
+            output[i] = toupper(seq[data[i] - 'A']); 
         } else if (islower(data[i])) {
-            output[i] = seq[data[i] - 'a'];  // Use lowercase sequence for lowercase input
+            output[i] = seq[data[i] - 'a'];  
         } else if (isdigit(data[i])) {
-            output[i] = seq[data[i] - '0' + 26];  // Offset for digits in the sequence
+            output[i] = seq[data[i] - '0' + 26];  
         } else {
-            output[i] = data[i];  // Non-alphanumeric characters remain unchanged
+            output[i] = data[i]; 
         }
     }
-    output[len] = '\0';  // Null-terminate the encrypted string
+    output[len] = '\0'; 
 }
 
 void decryption() {
     for (i = 0; i < len; i++) {
-        int found = 0;  // Flag to indicate when the character is found
+        int found = 0;  
         for (j = 0; j < 36 && !found; j++) {
-            if (seq[j] == tolower(data[i])) {  // Check both lowercase and uppercase in sequence
+            if (seq[j] == tolower(data[i])) {  
                 if (isdigit(data[i]))
                     output[i] = '0' + j - 26;
                 else if (islower(data[i]))
                     output[i] = 'a' + j;
                 else 
                     output[i] = 'A' + j;
-                found = 1;  // Set flag to indicate character is found
+                found = 1;  
             }
         }
         if (!found) {
-            output[i] = data[i];  // Non-alphanumeric characters remain unchanged
+            output[i] = data[i]; 
         }
     }
-    output[len] = '\0';  // Null-terminate the decrypted string
+    output[len] = '\0'; 
 }
 
 int main() {
