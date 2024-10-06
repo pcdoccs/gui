@@ -25,7 +25,7 @@ int main() {
             if (seq[i] > seq[j])
                 seq_No++; 
         }
-        for (j = 0; j < Rows; j++) { y
+        for (j = 0; j < Rows; j++) { 
             if ((seq_No * Rows) + j >= Rows * len)
                 break;
             output[(seq_No * Rows) + j] = data[j][i];
