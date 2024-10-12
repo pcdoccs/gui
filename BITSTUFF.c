@@ -22,7 +22,6 @@ count=0;
 }
 } while(ch!='\n');
 strcat(array,"01111110");
-frame format*/
 printf("\n Transmitted bit stream(After stuffing) at the transmitter side is %s",array);
 j=strlen(array);
 count=0;
