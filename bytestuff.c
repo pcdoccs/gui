@@ -9,7 +9,7 @@ int main(){
 	char ch,array[100]={DLE,STX};
 	int i=2,j;
 	
-	printf("\nEnter the data to be transmitted(@-DLE,#-STX,$-ETX):");
+	printf("\nEnter Transmitted data(@-DLE,#-STX,$-ETX):");
 	
 	do{
 	scanf("%c",&ch);
