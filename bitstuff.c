@@ -4,7 +4,7 @@ int main()
 {
 char ch, array[50]="01111110",read_array[50];
 int count=0,i=8,j,k;
-printf("Enter data to be transmitted:");
+printf("Enter Transmit data:");
 do
 {
 scanf("%c",&ch);
@@ -22,7 +22,7 @@ count=0;
 }
 } while(ch!='\n');
 strcat(array,"01111110");
-printf("\n Transmitted bit stream(After stuffing) at the transmitter side is %s",array);
+printf("\n Transmitted bit stream is %s",array);
 j=strlen(array);
 count=0;
 k=0;
@@ -41,7 +41,7 @@ count=0;
 }
 }
 read_array[k]='\0';
-printf("\n Destuffed data at the receiver is :");
+printf("\n Destuffed data is :");
 for(i=0;i<k;i++)
 printf("%c",read_array[i]);
 return 0;
