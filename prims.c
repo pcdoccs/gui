@@ -41,7 +41,7 @@ void main() {
     printf("\nEnter the number of vertices: ");
     scanf("%d", &n);
 
-    printf("\nEnter the cost matrix (0 for self-loop and 999 for no edge):\n");
+    printf("\nEnter the cost matrix :\n");
     for (i = 1; i <= n; i++) {
         for (j = 1; j <= n; j++) {
             scanf("%d", &a[i][j]);
@@ -51,7 +51,7 @@ void main() {
     for (i = 1; i <= n; i++) {
         for (j = 1; j <= n; j++) {
             if (a[i][j] != a[j][i] || (a[i][i] != 0)) {
-                printf("\nInvalid entry\nCost matrix should be symmetrical & diagonal elements should be zero.");
+                printf("\nInvalid entry Cost matrix not symmetrical & diagonal elements not zero.");
                 return;
             }
         }
